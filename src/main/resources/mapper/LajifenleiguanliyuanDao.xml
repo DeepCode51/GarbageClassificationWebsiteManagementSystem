@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LajifenleiguanliyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LajifenleiguanliyuanEntity" id="lajifenleiguanliyuanMap">
+        <result property="guanliyuanzhanghao" column="guanliyuanzhanghao"/>
+        <result property="guanliyuanxingming" column="guanliyuanxingming"/>
+        <result property="mima" column="mima"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="dianziyouxiang" column="dianziyouxiang"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LajifenleiguanliyuanVO" >
+		SELECT * FROM lajifenleiguanliyuan  lajifenleiguanliyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LajifenleiguanliyuanVO" >
+		SELECT  lajifenleiguanliyuan.* FROM lajifenleiguanliyuan  lajifenleiguanliyuan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LajifenleiguanliyuanView" >
+
+		SELECT  lajifenleiguanliyuan.* FROM lajifenleiguanliyuan  lajifenleiguanliyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LajifenleiguanliyuanView" >
+		SELECT * FROM lajifenleiguanliyuan  lajifenleiguanliyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
